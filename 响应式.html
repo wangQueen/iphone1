@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>响应式</title>
+	<!--移动端viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- 优先使用 IE 最新版本和 Chrome -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" href="响应式框架.css">
+	<style>
+body{
+	margin: 0;
+}
+.banner{
+	height: 300px;
+	background: #ccc;
+	padding: 50px;
+	margin: 0;
+}
+.top{
+	height:50px;
+	background: #000;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	margin: 0;
+}
+.topspan{
+	color:#fff;
+	line-height: 50px;
+	font-size: 20px;
+}
+.text{
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	float: right;
+	margin-right: 3px;
+	margin-top: 8px;
+}
+.text1{
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	float: left;
+	margin-right: 3px;
+	margin-top: 8px;
+}
+button{
+	float: right;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	color: #fff;
+	background: green;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	margin-top: 7px;
+}
+
+.san{
+	height:50px;
+	color:#fff;
+	font-size: 20px;
+	float: right;
+	line-height: 50px;
+	cursor: pointer;
+}
+#sanbutton{
+	margin-top: 15px;
+	float: left;
+}
+@media screen and (min-width: 768px){
+		.top{
+			height: 50px!important;
+		}
+	}
+	</style>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	var flag=true;
+	$('.san').click(function(){
+		if(flag){
+			$('.top').animate({height:'200'},function(){flag=false})
+		}else{
+			$('.top').animate({height:'50'},function(){flag=true})
+		}
+		
+	})
+
+})
+	
+</script>
+</head>
+<body>
+	<div class="container-fluid top">
+		<div class="row">
+		<div class="container hidden-xs">
+			<span class="topspan">Project name</span>
+			<button>Sign in</button>
+			<input type="password" placeholder="Password" class="text">
+			<input type="text" placeholder="Email" class="text">	
+		</div>
+		<div class="container hidden-md hidden-sm hidden-lg">
+			<span class="topspan">Project name</span>
+			<div class="san">三</div>
+			
+			<input type="password" placeholder="Password" class="text1">
+			<input type="text" placeholder="Email" class="text1">	
+			<button id="sanbutton">Sign in</button>
+		</div>
+		</div>	
+	</div>
+	<div class="container-fluid banner">
+		<div class="container">
+		<h3>hello world</h3>
+		<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
+			<h3>hello world</h3>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
+			<h3>hello world</h3>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
+			<h3>hello world</h3>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 hidden-md col-lg-3" >
+			<h3>hello world</h3>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
